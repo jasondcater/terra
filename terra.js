@@ -5,20 +5,18 @@
         debug : false,//turn on the uv map and axis helpers
 
         //Web GL, Three JS components
-        camera : new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 ),
+        camera : new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000),
         projector : new THREE.Projector(),
         scene : new THREE.Scene(),
         renderer : new THREE.WebGLRenderer({antialias: true}), 
         viewPort : document.createElement("div"),
 
         //Navigation
-        mousePosLock : [0,0],
-        mousePosCurrent : [0,0],
+        mousePosLock : [0, 0],
+        mousePosCurrent : [0, 0],
         navigate : false,
         rotation : 0,
         cameraDistance : 1000,
-        mousePosCurrent : [0,0], 
-        mousePosLock : [0,0],
 
         //Graphics and Maps
         mapEarthDay : null,
@@ -145,8 +143,7 @@
 
             //3D Rendering Context
             this.projector = new THREE.Projector();
-            
-            this.camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+        
             this.camera.position.x = 0;
             this.camera.position.y = 800;
             this.camera.position.z = 0;
@@ -205,8 +202,8 @@
         
                 var yaw = this.mousePosCurrent[0] - this.mousePosLock[0];
                 
-                this.camera.position.x = Math.cos( yaw / 100 ) * 800;
-                this.camera.position.z = Math.sin( yaw / 100 ) * 800;
+                this.camera.position.x = Math.cos(yaw / 100) * 800;
+                this.camera.position.z = Math.sin(yaw / 100) * 800;
                 
                 var pitch = this.mousePosLock[1] - this.mousePosCurrent[1];
                 
@@ -224,7 +221,7 @@
         
             this.camera.aspect = window.innerWidth / window.innerHeight;
             this.camera.updateProjectionMatrix();
-            this.renderer.setSize( window.innerWidth, window.innerHeight );
+            this.renderer.setSize(window.innerWidth, window.innerHeight);
         },
 
         animate : function(){
