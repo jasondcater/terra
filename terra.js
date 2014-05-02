@@ -98,8 +98,8 @@
             //used for calibration
             var eci = new THREE.AxisHelper(50);//red is X, green is Y, blue is Z
             eci.position.set(200, 0, -200);
-            eci.rotation.x = -90*Math.PI/180;
-            eci.rotation.z = 90*Math.PI/180;
+            eci.rotation.x = -Math.PI/2
+            eci.rotation.z = Math.PI/2
             eci.rotation.y = -tilt;
             if(this.debug) this.scene.add(eci);
 
@@ -148,7 +148,7 @@
             this.camera.position.y = 800;
             this.camera.position.z = 0;
 
-            this.scene.add( new THREE.AmbientLight( 0xffffff ) );
+            this.scene.add(new THREE.AmbientLight(0xffffff));
 
             this.animate();
 
