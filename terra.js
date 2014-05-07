@@ -23,9 +23,9 @@
         materialEarthDay : null, 
 
         //line materials
-        centerAxisMaterial : new THREE.LineBasicMaterial({ color: 0xeaa51f, opacity: 0.8}),
-        polarAxisMaterial : new THREE.LineBasicMaterial({ color: 0xcc00cc, opacity: 0.8}),
-        sunLineMaterial : new THREE.LineBasicMaterial({ color: 0xf7d06b, opacity: 0.8}), 
+        centerAxisMaterial : new THREE.LineBasicMaterial({color: 0xeaa51f, opacity: 0.8}),
+        polarAxisMaterial : new THREE.LineBasicMaterial({color: 0xcc00cc, opacity: 0.8}),
+        sunLineMaterial : new THREE.LineBasicMaterial({color: 0xf7d06b, opacity: 0.8}), 
 
         orbiterMarkerMaterial  : [new THREE.MeshBasicMaterial({color:0xea1f5d, wireframe:true, transparent:true, opacity:1, side:THREE.DoubleSide})], 
 
@@ -54,7 +54,7 @@
             this.mapEarthDay.wrapS = this.mapEarthDay.wrapT = THREE.RepeatWrapping;
             this.mapEarthDay.anisotropy = 16;
 
-            var earthMat = new THREE.MeshLambertMaterial( { ambient: 0xbbbbbb, map: this.mapEarthDay } );
+            var earthMat = new THREE.MeshLambertMaterial({ambient:0xbbbbbb, map:this.mapEarthDay});
             earthMat.transparent = true;
             earthMat.blending = THREE[ "NoBlending" ];
             earthMat.blendSrc = THREE[ "ZeroFactor" ];
@@ -72,7 +72,7 @@
             this.earthCenter.rotation.z = tilt;
 
             //earth day center will deal with the hourly rotation of the planet.
-            this.earth = THREE.SceneUtils.createMultiMaterialObject( new THREE.SphereGeometry( this.earthRadius, 48, 24 ), this.materialEarthDay );
+            this.earth = THREE.SceneUtils.createMultiMaterialObject(new THREE.SphereGeometry(this.earthRadius, 48, 24), this.materialEarthDay);
             this.earthCenter.add(this.earth);
             this.scene.add(this.earthCenter);
 
@@ -116,7 +116,7 @@
             this.sunCenter.add(sunLn);
 
         //set up the render/camera/view
-            this.renderer.setSize(window.innerWidth-100, window.innerHeight - 100);
+            this.renderer.setSize(window.innerWidth, window.innerHeight);
             this.renderer.setClearColor(0x221d23, 1);
 
             //Mouse Navigation Events
